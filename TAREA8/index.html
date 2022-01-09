@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menú Ejercicios CSS</title>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/index.css" />
+
+    <!--Utilizaremos la libreria jQuery con la version 3.3.1-->
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+    <script>
+      //Ejercicio 1
+      //Funcion que hace desaparecer el div transcurridos 3000 milisegundos!
+      $(document).ready(function () {
+        $("#ejercicio1").click(function () {
+          setTimeout(function () {
+            // Declaramos la capa mediante una clase para ocultarlo
+            $(".midiv").fadeOut(1500);
+          }, 2000);
+
+          setTimeout(function () {
+            // Declaramos la capa  mediante una clase para ocultarlo
+            $(".midiv").fadeIn(1500);
+            // Transcurridos 5 segundos aparecera la capa midiv2
+          }, 5000);
+
+          setTimeout(function () {
+            // Declaramos la capa  mediante una clase para ocultarlo
+            alert("He tardado 2 segundos en mostrarme").fadeIn(1500);
+            // Transcurridos 7 segundos aparecera la capa midiv2
+          }, 7000);
+        });
+      });
+
+      //Ejercicio 2
+      $(document).ready(function () {
+        $("#botonEjer2").mouseover(function () {
+          $("#botonEjer2").fadeTo(400, 0.3);
+        });
+        $("#botonEjer2").mouseout(function () {
+          $("#botonEjer2").fadeTo(400, 1);
+        });
+      });
+
+      //Ejercicio 3
+      $(document).ready(function () {
+        var clicks = 0;
+        $("#botonEjer3").click(function () {
+          if (clicks == 0) {
+            $("#botonEjer3").animate({ marginLeft: "150px" });
+            ++clicks;
+          } else {
+            $("#botonEjer3").animate({ marginLeft: "0px" });
+            clicks = 0;
+          }
+        });
+      });
+
+      //Ejercicio 5
+      $(document).ready(function () {
+        $("#mayor-edad").click(function () {
+          if ($(this).is(":checked")) {
+            $("#t1").hide();
+          } else {
+            $("#t1").show();
+          }
+        });
+        $("#socio").click(function () {
+          if ($(this).is(":checked")) {
+            $("#t2").hide();
+          } else {
+            $("#t2").show();
+          }
+        });
+        $("#tarjeta-regalo").click(function () {
+          if ($(this).is(":checked")) {
+            $("#t3").hide();
+          } else {
+            $("#t3").show();
+          }
+        });
+      });
+
+      //Ejercicio 6
+      $(document).ready(function () {
+        $(".nota").focus(function () {
+          $(this).css({ color: "red" });
+        });
+
+        $(".nota").blur(function () {
+          $(this).css({ color: "green" });
+        });
+      });
+
+      //Ejercicio 7
+      $(document).ready(function () {
+        $(".selected").find("p").css({ "background-color": "yellow" });
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <input type="checkbox" id="check" />
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+          <li>
+            <a href="#"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="#ejer1"><i class="fab fa-js"></i> Ejercicio#1</a>
+          </li>
+          <li>
+            <a href="#ejer2"><i class="fab fa-js"></i> Ejercicio#2</a>
+          </li>
+          <li>
+            <a href="#ejer3"><i class="fab fa-js"></i> Ejercicio#3</a>
+          </li>
+          <li>
+            <a href="#ejer5"><i class="fab fa-js"></i> Ejercicio#5</a>
+          </li>
+          <li>
+            <a href="#ejer5"><i class="fab fa-js"></i> Ejercicio#6</a>
+          </li>
+          <li>
+            <a href="#ejer6"><i class="fab fa-js"></i> Ejercicio#7</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="banner">
+      <div class="row">
+        <h2>Ejercicios</h2>
+        <div id="animation"></div>
+      </div>
+    </section>
+
+    <main>
+      <!--AQUI TENEMOS la parte de las imagenes -->
+      <section class="contenedor">
+        <h2 class="subtitulo">Ejercicios jQuery</h2>
+        <section class="subconten1 contenedor">
+          <div class="subconten1_texto">
+            <h3><span>1º</span>Ejercicio</h3>
+            <p class="subconten1_parrafo">
+              Cree un enlace que lleve su nombre y una cabecera con “Ejercicio1”
+            </p>
+            <p class="subconten1_parrafo">
+              Utilice jquery para que al pulsar en el enlace se oculte el enlace
+              con una duración de 5 segundos. Inmediatamente después se muestra
+              tardando 3 segundos y finalmente se vuelve a mostrar en 0,2
+              segundos.
+            </p>
+            <p class="subconten1_parrafo">
+              Luego lo volverá a mostrar tardando 2 segundos y nada más
+              finalizar de mostrarlo se mostrará una alerta en pantalla “He
+              tardado 2 segundos en mostrarme”
+            </p>
+          </div>
+
+          <div class="subconten1__img" id="ejer1">
+            <figure>
+              <div class="miCont">
+                <div class="selected">
+                  <p><a id="ejercicio1" href="#ejercicio1">EJERCICIO 1</a></p>
+                </div>
+                <br />
+
+                <div class="midiv">Ylich!</div>
+              </div>
+            </figure>
+          </div>
+
+          <div class="subconten1__img--izq" id="ejer2">
+            <figure>
+              <div class="miCont">
+                <div class="selected">
+                  <p>Ejercicio #2</p>
+                </div>
+                <div class="midivBoton">
+                  <div id="botonEjer2">Ylich</div>
+                </div>
+              </div>
+            </figure>
+          </div>
+
+          <div class="subconten1_texto">
+            <h3><span>2º</span>Ejercicio</h3>
+            <p class="subconten1_parrafo">
+              Cree un botón con su nombre. Al situar el cursor en el mismo se
+              modificará la opacidad a 0,3 en 0,4 segundos. Y al salir se dejará
+              como estaba en 0,4 segundos.
+            </p>
+          </div>
+        </section>
+
+        <section class="subconten1 contenedor">
+          <div class="subconten1_texto">
+            <h3><span>3º</span>Ejercicio</h3>
+            <p class="subconten1_parrafo">
+              Cree un botón que al pulsarlo la primera vez lo mueva 400px a la
+              izquierda y la siguiente vez lo deje completamente a la izquierda.
+              Si se vuelve a pulsar lo movería a 400px, si lo vuelve a pulsar a
+              la izquierda,… y así sucesivamente. En el primer caso que sea slow
+              y en el segundo fast.
+            </p>
+          </div>
+
+          <div class="subconten1__img" id="ejer3">
+            <figure>
+              <div class="miCont">
+                <div class="selected">
+                  <p>Ejercicio #3</p>
+                </div>
+                <div class="midivBoton">
+                  <div id="botonEjer3">Ylich</div>
+                </div>
+              </div>
+            </figure>
+          </div>
+        </section>
+      </section>
+
+      <section class="contenedor">
+        <section class="subconten1 contenedor">
+          <div class="subconten1_texto">
+            <h3 id="ejer5"><span>5º</span>Ejercicio</h3>
+            <p class="subconten1_parrafo">
+              Este ejercicio esta compuesto por el 4º y 5º ejercicio nos pide:
+              Estudiar y comprender el siguiente contenido. Luego pasa a hacer
+              el ejercicio siguiente con estos conocimientos. Show/hide a rows
+              on uncheked form checkbox.
+            </p>
+            <p class="subconten1_parrafo">
+              Crea un formulario con 3 chexbox: Mayor de edad, Socio, Tarjeta
+              Regalo. Además tendrá una tabla con las siguientes filas:
+            </p>
+            <ol>
+              <li>&nbsp; &nbsp; 1. Debe ir acompañado de un adulto</li>
+              <li>&nbsp; &nbsp; 2. No puede traer invitados</li>
+              <li>&nbsp; &nbsp; 3. Abonará 5% de tasas</li>
+            </ol>
+            <br />
+
+            <p class="subconten1_parrafo">
+              En caso de pulsar el primer checkbox se esconderá la primera fila.
+              En el caso de pulsar el segundo se esconderá la segunda fila y si
+              se pulsa la tercera se esconderá la tercera fila. En caso
+              contrario se mostrarán las mismas filas.
+            </p>
+          </div>
+
+          <div class="subconten1__img">
+            <figure>
+              <div class="miCont">
+                <div class="selected">
+                  <p>Ejercicio #5</p>
+                </div>
+
+                <div id="midivFomu">
+                  <input type="checkbox" id="mayor-edad" value="opcion" /> Mayor
+                  de edad<br />
+                  <input type="checkbox" id="socio" value="opcion" />
+                  Socio<br />
+                  <input type="checkbox" id="tarjeta-regalo" value="opcion" />
+                  Tarjeta de regalo <br /><br />
+                  <table>
+                    <tr id="t1">
+                      <td>Debe ir acompañado de un adulto</td>
+                    </tr>
+                    <tr id="t2">
+                      <td>No puede traer invitados</td>
+                    </tr>
+                    <tr id="t3">
+                      <td>Abonará 5% de tasas</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </figure>
+          </div>
+
+          <div class="subconten1__img">
+            <figure>
+              <div class="miCont">
+                <div class="selected">
+                  <p>Ejercicio #6</p>
+                </div>
+
+                <div class="midivFomuEje6" id="ejer6">
+                  Introduce la nota:
+                  <input type="text" name="nota" class="nota" /><br />
+                  Asignatura:
+                  <input type="text" name="nota" class="nota" /><br />
+                  Alumno: <input type="text" name="nota" class="nota" /><br />
+                </div>
+              </div>
+            </figure>
+          </div>
+
+          <div class="subconten1_texto">
+            <h3><span>6º</span>Ejercicio</h3>
+            <p class="subconten1_parrafo">
+              Crear un formulario que pida las notas de las asignaturas del
+              curso. Al situarse el foco en cada uno de los campos de nota se
+              debe modificar el color del texto a rojo. Cuando no tenga el foco
+              el color del texto debe ser verde.
+            </p>
+          </div>
+        </section>
+      </section>
+
+      <section class="contenedor">
+        <section class="subconten1 contenedor">
+          <div class="subconten1_texto">
+            <h3 id="ejer7"><span>7º</span>Ejercicio</h3>
+            <p class="subconten1_parrafo">
+              Crear una página web con elementos div algunos serán de la clase
+              “selected” y otros no. Todos ellos tendrán párrafos dentro. Crear
+              un script para que aquellos párrafos cuyo padre sea de la clase
+              selected aparezcan con el fondo en color amarillo.
+            </p>
+          </div>
+
+          <div class="subconten1__img">
+            <figure>
+              <div class="miCont">
+                <div class="selected">
+                  <p>Ejercicio #7</p>
+                </div>
+                <br />
+                <div class="selected">
+                  <p>Uso de class "selected"</p>
+                </div>
+              </div>
+            </figure>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <nav class="pie">
+        <a>
+          Copyright&copy; 2022 - Página creada por Ylich Layana - Todos los
+          derechos reservados<br />
+          correo: ylichlayana@gmail.com
+        </a>
+
+        <p>
+          <a href="http://jigsaw.w3.org/css-validator/check/referer">
+            <img
+              style="border: 0; width: 88px; height: 31px"
+              src="http://jigsaw.w3.org/css-validator/images/vcss"
+              alt="¡CSS Válido!"
+            />
+          </a>
+        </p>
+      </nav>
+    </footer>
+  </body>
+</html>

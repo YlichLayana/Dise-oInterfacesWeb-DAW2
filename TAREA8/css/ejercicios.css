@@ -1,0 +1,110 @@
+
+.miCont{
+    width:400px;
+    margin:10px;
+    height:300px;
+    padding:20px;
+    background: linear-gradient(to right, rgba(2, 2, 39, 0.2), rgba(14, 82, 82, 0.7));
+    border-radius: 8px;
+    text-align: center;
+    align-items: center;
+    font-size:25px;
+    box-shadow: 7px 6px 5px grey;
+   
+}
+
+
+.midiv {
+    width:250px;
+    margin:0 auto;
+    height:200px;
+    padding:20px;
+    background-color: rgba(36, 129, 124, 0.781);
+    color: #FFF;
+    font-family:Verdana, Geneva, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align:center;
+    font-size:25px;
+    border-radius: 8px;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    
+}
+
+.midivBoton {
+    width:250px;
+    margin:0 auto;
+    height:200px;
+    padding:20px;
+    color: #FFF;
+    font-family:Verdana, Geneva, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align:center;
+    font-size:25px;
+    border-radius: 8px;
+    
+}
+
+#botonEjer2 {
+    padding: 10px;
+    background: orange;
+    width: 110px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 2px #000;
+    border-radius: 3px;
+   
+  }
+
+  #botonEjer3 {
+    padding: 10px;
+    background: rgb(7, 53, 27);
+    width: 110px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 2px #000;
+    border-radius: 3px;
+   
+  }
+
+
+#midivFomu {
+    width:350px;
+    margin:0 auto;
+    height:300px;
+    padding:20px;
+    color: #FFF;
+    font-family:Verdana, Geneva, sans-serif;
+    text-align:left;
+    font-size:20px;
+    border-radius: 8px;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    
+}
+
+.midivFomuEje6 {
+    width:350px;
+    margin:0 auto;
+    height:300px;
+    padding:20px;
+    color: #FFF;
+    font-family:Verdana, Geneva, sans-serif;
+    text-align:left;
+    font-size:20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    
+}
